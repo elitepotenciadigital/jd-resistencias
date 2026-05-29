@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#2a1200"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </radialGradient>
+    <linearGradient id="silverJD" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#d0d0d0"/>
+      <stop offset="60%" stop-color="#a0a0a0"/>
+      <stop offset="100%" stop-color="#c8c8c8"/>
+    </linearGradient>
+    <linearGradient id="silverText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8e8e8"/>
+      <stop offset="50%" stop-color="#b0b0b0"/>
+      <stop offset="100%" stop-color="#d0d0d0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="orangeGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="circleClip">
+      <circle cx="150" cy="150" r="138"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outer orange ring -->
+  <circle cx="150" cy="150" r="148" fill="#E07020" opacity="0.9"/>
+  <circle cx="150" cy="150" r="142" fill="#1a0800"/>
+  <circle cx="150" cy="150" r="138" fill="url(#bgGrad)"/>
+
+  <!-- Inner orange glow ring -->
+  <circle cx="150" cy="150" r="138" fill="none" stroke="#E07020" stroke-width="2" opacity="0.5"/>
+
+  <!-- Background fire/furnace effect (clipped) -->
+  <g clip-path="url(#circleClip)">
+    <!-- Furnace glow -->
+    <ellipse cx="90" cy="130" rx="55" ry="65" fill="#CC5500" opacity="0.3"/>
+    <ellipse cx="90" cy="130" rx="35" ry="45" fill="#FF8800" opacity="0.2"/>
+    <!-- Resistencia coil on right -->
+    <g opacity="0.4" stroke="#E07020" stroke-width="3" fill="none">
+      <ellipse cx="225" cy="120" rx="12" ry="6"/>
+      <ellipse cx="225" cy="132" rx="12" ry="6"/>
+      <ellipse cx="225" cy="144" rx="12" ry="6"/>
+      <ellipse cx="225" cy="156" rx="12" ry="6"/>
+      <ellipse cx="225" cy="168" rx="12" ry="6"/>
+    </g>
+  </g>
+
+  <!-- JD text - large metallic -->
+  <text x="150" y="118" text-anchor="middle"
+        font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="82"
+        fill="url(#silverJD)" filter="url(#glow)" letter-spacing="-2">JD</text>
+
+  <!-- Orange glow behind JD -->
+  <text x="150" y="118" text-anchor="middle"
+        font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="82"
+        fill="#E07020" opacity="0.15" letter-spacing="-2">JD</text>
+
+  <!-- RESISTÊNCIAS -->
+  <text x="150" y="148" text-anchor="middle"
+        font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="24"
+        fill="url(#silverText)" letter-spacing="1">RESISTÊNCIAS</text>
+
+  <!-- Decorative lines + INDUSTRIAIS -->
+  <line x1="50" y1="158" x2="105" y2="158" stroke="#E07020" stroke-width="1.5"/>
+  <text x="150" y="168" text-anchor="middle"
+        font-family="Arial, sans-serif" font-weight="700" font-size="11"
+        fill="#E07020" letter-spacing="4">INDUSTRIAIS</text>
+  <line x1="195" y1="158" x2="250" y2="158" stroke="#E07020" stroke-width="1.5"/>
+
+  <!-- FORNOS • RESISTÊNCIAS • MANUTENÇÃO -->
+  <text x="150" y="185" text-anchor="middle"
+        font-family="Arial, sans-serif" font-weight="600" font-size="9.5"
+        fill="#ffffff" letter-spacing="0.5">FORNOS • RESISTÊNCIAS • MANUTENÇÃO</text>
+
+  <!-- Divider -->
+  <line x1="55" y1="193" x2="245" y2="193" stroke="#E07020" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- 3 icon columns -->
+  <!-- Col 1: thermometer + ATE 1400°C -->
+  <text x="75" y="213" text-anchor="middle" font-size="16">🌡️</text>
+  <text x="75" y="227" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="7.5" fill="#E07020">ATÉ 1400°C</text>
+  <text x="75" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="7.5" fill="#E07020">ALTA PERFORMANCE</text>
+
+  <!-- Col 2: gear + SOLUÇÕES INDUSTRIAIS -->
+  <text x="150" y="213" text-anchor="middle" font-size="16">⚙️</text>
+  <text x="150" y="227" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="7.5" fill="#E07020">SOLUÇÕES</text>
+  <text x="150" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="7.5" fill="#E07020">INDUSTRIAIS SOB MEDIDA</text>
+
+  <!-- Col 3: shield + QUALIDADE -->
+  <text x="225" y="213" text-anchor="middle" font-size="16">🛡️</text>
+  <text x="225" y="227" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="7.5" fill="#E07020">QUALIDADE</text>
+  <text x="225" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="7.5" fill="#E07020">DURABILIDADE CONFIANÇA</text>
+
+  <!-- Dividers between columns -->
+  <line x1="112" y1="198" x2="112" y2="245" stroke="#E07020" stroke-width="0.8" opacity="0.5"/>
+  <line x1="188" y1="198" x2="188" y2="245" stroke="#E07020" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- ATENDIMENTO EM TODO O BRASIL -->
+  <text x="150" y="263" text-anchor="middle"
+        font-family="Arial, sans-serif" font-weight="700" font-size="9"
+        fill="#E07020" letter-spacing="0.5">ATENDIMENTO EM TODO O BRASIL 🇧🇷</text>
+</svg>

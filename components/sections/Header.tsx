@@ -32,8 +32,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <span className="font-black text-2xl tracking-tight" style={{ color: "#E07020" }}>JD</span>
-          <div>
+          <img
+            src="/logo.svg"
+            alt="JD Resistências"
+            className="h-11 w-11 object-contain"
+            style={{ filter: "drop-shadow(0 0 8px rgba(224,112,32,0.5))" }}
+          />
+          <div className="hidden sm:block">
             <span className="text-white font-bold text-sm block leading-none">RESISTÊNCIAS</span>
             <span className="text-[#B0B8C0] text-[10px] leading-none">Desde 1975</span>
           </div>
