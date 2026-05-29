@@ -15,11 +15,10 @@ export default function Services() {
               O que fazemos
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-white mt-4 mb-3">
-              Nossos Serviços
+              Resistências Elétricas e Fornos Industriais
             </h2>
             <p className="text-[#B0B8C0]/60 max-w-xl mx-auto text-sm">
-              Soluções completas em fornos e resistências industriais com tecnologia de ponta
-              e 49 anos de expertise.
+              Fabricamos resistências elétricas industriais e fornos industriais sob medida com 49 anos de expertise. Resistências tubulares, de imersão, Kanthal, Inconel e fornos para tratamento térmico.
             </p>
           </div>
         </ScrollReveal>

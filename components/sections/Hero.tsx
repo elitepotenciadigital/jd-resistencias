@@ -35,7 +35,7 @@ export default function Hero() {
           style={{ background: "rgba(224,112,32,0.08)" }}
         >
           <span className="w-2 h-2 rounded-full bg-[#E07020] animate-pulse" />
-          Fabricação própria · Atendimento nacional · Desde 1975
+          Resistências Elétricas Industriais · Fornos Industriais · Desde 1975
         </motion.div>
 
         {/* H1 */}

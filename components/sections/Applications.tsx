@@ -26,8 +26,7 @@ export default function Applications() {
               Aplicações Industriais
             </h2>
             <p className="text-[#B0B8C0]/60 max-w-xl mx-auto text-sm">
-              Atendemos os principais segmentos da indústria pesada brasileira com soluções
-              técnicas sob medida para cada processo.
+              Fornecemos resistências industriais e fornos industriais para os principais segmentos da indústria brasileira. Resistências para fundição de alumínio, forno tratamento térmico, metalúrgicas e indústria automotiva.
             </p>
           </div>
         </ScrollReveal>
