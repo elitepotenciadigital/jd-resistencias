@@ -39,7 +39,10 @@ export default function Home() {
         <meta property="og:url" content="https://www.jdresistencias.com.br" />
         <meta property="og:title" content="Resistências Industriais e Fornos Industriais | JD Resistências" />
         <meta property="og:description" content="Compre resistências elétricas industriais e fornos com 49 anos de experiência. Fabricação própria. Entrega em todo o Brasil." />
-        <meta property="og:image" content="https://www.jdresistencias.com.br/logo.png" />
+        <meta property="og:image" content="https://www.jdresistencias.com.br/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:locale" content="pt_BR" />
         <meta property="og:site_name" content="JD Resistências" />
 
@@ -47,7 +50,7 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Resistências Industriais e Fornos | JD Resistências" />
         <meta name="twitter:description" content="49 anos fabricando resistências elétricas e fornos industriais. Fabricação própria, entrega nacional." />
-        <meta name="twitter:image" content="https://www.jdresistencias.com.br/logo.png" />
+        <meta name="twitter:image" content="https://www.jdresistencias.com.br/og-image.png" />
 
         {/* Schema.org JSON-LD */}
         <script
