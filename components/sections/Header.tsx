@@ -33,7 +33,7 @@ export default function Header() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
           <img
-            src="/logo.svg"
+            src="/logo.png"
             alt="JD Resistências"
             className="h-11 w-11 object-contain"
             style={{ filter: "drop-shadow(0 0 8px rgba(224,112,32,0.5))" }}

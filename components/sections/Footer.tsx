@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 sm:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <img src="/logo.svg" alt="JD Resistências" className="h-12 w-12 object-contain" />
+              <img src="/logo.png" alt="JD Resistências" className="h-12 w-12 object-contain" />
               <span className="text-white font-bold text-sm">RESISTÊNCIAS</span>
             </div>
             <p className="text-[#B0B8C0]/40 text-xs leading-relaxed mb-4">
