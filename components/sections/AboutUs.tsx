@@ -83,7 +83,7 @@ export default function AboutUs() {
               </p>
               <p>
                 Não somos um catálogo online. Somos uma equipe técnica que entende o seu
-                problema e entrega a solução certa, no prazo combinado.
+                problema e entrega a solução conforme combinado.
               </p>
             </div>
 

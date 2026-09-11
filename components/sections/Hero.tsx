@@ -117,7 +117,7 @@ export default function Hero() {
           transition={{ delay: 0.6 }}
           className="mt-4 mb-16 text-white/30 text-xs"
         >
-          🔥 Resposta rápida via WhatsApp · Suporte técnico especializado
+          🔥 Atendimento via WhatsApp · Suporte técnico especializado
         </motion.p>
       </div>
     </section>

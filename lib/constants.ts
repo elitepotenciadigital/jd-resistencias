@@ -43,7 +43,7 @@ export const SERVICES = [
     title: "Manutenção e Reparo",
     tag: "Suporte técnico",
     description:
-      "Manutenção preventiva e corretiva de fornos e resistências de qualquer marca. Diagnóstico rápido e solução especializada.",
+      "Manutenção preventiva e corretiva de fornos e resistências de qualquer marca. Diagnóstico técnico e solução especializada.",
   },
   {
     icon: "📐",
@@ -64,7 +64,7 @@ export const SERVICES = [
     title: "Atendimento Urgente",
     tag: "Produção parada?",
     description:
-      "Forno defeituoso ou resistência queimada com produção parada? Atendimento técnico especializado com resposta rápida via WhatsApp.",
+      "Forno defeituoso ou resistência queimada com produção parada? Atendimento técnico especializado pelo WhatsApp.",
   },
 ];
 
@@ -74,5 +74,5 @@ export const PROCESS_STEPS = [
   { number: "03", title: "Proposta", desc: "Orçamento detalhado" },
   { number: "04", title: "Fabricação", desc: "Produção com qualidade" },
   { number: "05", title: "Testes", desc: "Controle rigoroso" },
-  { number: "06", title: "Entrega", desc: "Logística combinada" },
+  { number: "06", title: "Entrega", desc: "Conforme combinado" },
 ];

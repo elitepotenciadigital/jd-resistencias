@@ -14,7 +14,7 @@ type FormData = {
 };
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "saved" | "whatsappOnly" | "error">("idle");
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
 
@@ -32,8 +32,20 @@ export default function ContactForm() {
         `Mensagem: ${data.message}`,
       ].join("\n");
 
+      let saved = false;
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        saved = response.ok;
+      } catch {
+        saved = false;
+      }
+
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
-      setStatus("success");
+      setStatus(saved ? "saved" : "whatsappOnly");
       setTimeout(() => { reset(); setStatus("idle"); }, 4000);
     } catch {
       setStatus("error");
@@ -63,7 +75,7 @@ export default function ContactForm() {
               Deixe seus dados
             </h2>
             <p className="text-[#B0B8C0]/50 text-sm">
-              Envie sua necessidade e fale direto com a JD pelo WhatsApp.
+              Preencha os dados e continue o atendimento pelo WhatsApp da JD.
             </p>
           </div>
         </ScrollReveal>
@@ -137,16 +149,22 @@ export default function ContactForm() {
         </ScrollReveal>
 
         <AnimatePresence>
-          {status === "success" && (
+          {status === "saved" && (
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
               className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-green-600 text-white font-semibold px-6 py-3 rounded-xl shadow-xl z-50">
-              ✅ WhatsApp aberto com seus dados. É só enviar a mensagem.
+              ✅ Dados registrados. O WhatsApp foi aberto para continuar o atendimento.
+            </motion.div>
+          )}
+          {status === "whatsappOnly" && (
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
+              className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-[#E07020] text-white font-semibold px-6 py-3 rounded-xl shadow-xl z-50">
+              WhatsApp aberto com seus dados. É só enviar a mensagem.
             </motion.div>
           )}
           {status === "error" && (
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
               className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-red-600 text-white font-semibold px-6 py-3 rounded-xl shadow-xl z-50">
-              ❌ Não conseguimos abrir o WhatsApp. Use o botão flutuante.
+              ❌ Não conseguimos registrar seus dados. Chame pelo WhatsApp.
             </motion.div>
           )}
         </AnimatePresence>

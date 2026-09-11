@@ -35,8 +35,8 @@ export default function MainCTA() {
             <span style={{ color: "#E07020" }}>sua produção?</span>
           </h2>
           <p className="text-[#B0B8C0]/60 text-base sm:text-lg mb-3 max-w-xl mx-auto">
-            Fale agora com nossos especialistas. Sem burocracia, sem enrolação.
-            <strong className="text-white"> Resposta em minutos pelo WhatsApp.</strong>
+            Fale com nossos especialistas para alinhar sua necessidade técnica.
+            <strong className="text-white"> Atendimento direto pelo WhatsApp.</strong>
           </p>
           <p className="text-[#B0B8C0]/30 text-sm mb-10">
             🔥 Suporte técnico especializado · Alta eficiência térmica · Soluções industriais personalizadas
