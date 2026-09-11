@@ -74,5 +74,5 @@ export const PROCESS_STEPS = [
   { number: "03", title: "Proposta", desc: "Orçamento detalhado" },
   { number: "04", title: "Fabricação", desc: "Produção com qualidade" },
   { number: "05", title: "Testes", desc: "Controle rigoroso" },
-  { number: "06", title: "Entrega", desc: "Prazo garantido" },
+  { number: "06", title: "Entrega", desc: "Logística combinada" },
 ];
