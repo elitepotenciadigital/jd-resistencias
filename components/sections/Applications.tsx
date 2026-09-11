@@ -7,7 +7,7 @@ const applications = [
   { icon: "🔩", title: "Metalúrgicas", desc: "Soluções completas para processos metalúrgicos de alta performance." },
   { icon: "🚗", title: "Indústria Automotiva", desc: "Resistências e fornos para fabricação de componentes automotivos." },
   { icon: "⚡", title: "Fabricantes de Parafusos", desc: "Processos de têmpera e revenimento para parafusaria industrial." },
-  { icon: "🏗️", title: "Petroquímica", desc: "Equipamentos certificados para ambientes industriais severos." },
+  { icon: "🏗️", title: "Petroquímica", desc: "Resistências e fornos sob medida para ambientes industriais severos." },
 ];
 
 export default function Applications() {

@@ -7,7 +7,7 @@ const points = [
   "Atendimento nacional com suporte técnico especializado no pós-venda",
   "Resistências sob especificação técnica para qualquer aplicação",
   "Projetos até 1400°C com controle de temperatura de alta precisão",
-  "Certificações ISO e conformidade com normas nacionais e internacionais",
+  "Reforma, manutenção e fabricação com acompanhamento técnico direto",
 ];
 
 export default function Differentials() {
@@ -31,8 +31,8 @@ export default function Differentials() {
                   <div className="text-[#B0B8C0]/40 text-sm mt-1">de Experiência</div>
                   <div className="w-16 h-0.5 mx-auto my-6" style={{ background: "#E07020" }} />
                   <div className="text-[#B0B8C0]/60 text-sm leading-relaxed">
-                    Fundada em 1975, a JD Resistências é referência nacional em fornos e
-                    resistências industriais de alta performance.
+                    Fundada em 1975, a JD Resistências fabrica e reforma fornos e
+                    resistências industriais para processos de alta temperatura.
                   </div>
                 </div>
               </div>
@@ -41,7 +41,7 @@ export default function Differentials() {
                 className="absolute -bottom-4 -right-4 text-white font-black text-sm px-4 py-3 rounded-xl"
                 style={{ background: "linear-gradient(135deg, #E07020, #F08030)" }}
               >
-                🏆 Líder de Mercado
+                Fabricação Própria
               </div>
             </div>
           </ScrollReveal>

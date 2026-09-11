@@ -33,7 +33,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold text-sm mb-4">Links Rápidos</h4>
             <ul className="space-y-2">
-              {[["#home","Início"],["#servicos","Serviços"],["#sobre","Sobre Nós"],["#certificacoes","Certificações"],["#contato","Contato"]].map(([href,label])=>(
+              {[["#home","Início"],["#servicos","Serviços"],["#sobre","Sobre Nós"],["#aplicacoes","Aplicações"],["#contato","Contato"]].map(([href,label])=>(
                 <li key={href}><a href={href} className="text-[#B0B8C0]/40 hover:text-white text-xs transition-colors">{label}</a></li>
               ))}
             </ul>
