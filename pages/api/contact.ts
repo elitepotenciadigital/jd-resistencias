@@ -35,7 +35,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   console.log("Novo lead JD Resistências:", lead);
 
   if (!process.env.LEADS_WEBHOOK_URL) {
-    return res.status(503).json({ error: "Armazenamento de leads não configurado" });
+    return res.status(202).json({
+      ok: true,
+      stored: false,
+      message: "Webhook de leads não configurado; lead disponível nos logs da Vercel.",
+    });
   }
 
   const webhookResponse = await fetch(process.env.LEADS_WEBHOOK_URL, {
@@ -52,5 +56,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(502).json({ error: "Não foi possível salvar o contato" });
   }
 
-  return res.status(200).json({ ok: true });
+  return res.status(200).json({ ok: true, stored: true });
 }

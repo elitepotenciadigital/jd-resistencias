@@ -32,20 +32,21 @@ export default function ContactForm() {
         `Mensagem: ${data.message}`,
       ].join("\n");
 
-      let saved = false;
+      let stored = false;
       try {
         const response = await fetch("/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
         });
-        saved = response.ok;
+        const result = await response.json().catch(() => null);
+        stored = response.ok && result?.stored === true;
       } catch {
-        saved = false;
+        stored = false;
       }
 
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
-      setStatus(saved ? "saved" : "whatsappOnly");
+      setStatus(stored ? "saved" : "whatsappOnly");
       setTimeout(() => { reset(); setStatus("idle"); }, 4000);
     } catch {
       setStatus("error");
