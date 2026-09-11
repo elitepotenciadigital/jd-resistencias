@@ -20,7 +20,7 @@ export const METRICS = [
   { value: 49, suffix: "+", label: "Anos de Experiência" },
   { value: 500, suffix: "+", label: "Clientes Satisfeitos" },
   { value: 1000, suffix: "+", label: "Fornos Fabricados" },
-  { value: 15, suffix: "+", label: "Certificações Internacionais" },
+  { value: 1400, suffix: "°C", label: "Projetos de Alta Temperatura" },
 ];
 
 export const SERVICES = [

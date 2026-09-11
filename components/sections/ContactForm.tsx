@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "@/components/common/ScrollReveal";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
 
 type FormData = {
   name: string;
@@ -20,18 +21,20 @@ export default function ContactForm() {
   async function onSubmit(data: FormData) {
     setStatus("loading");
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (res.ok) {
-        setStatus("success");
-        setTimeout(() => { reset(); setStatus("idle"); }, 4000);
-      } else {
-        setStatus("error");
-        setTimeout(() => setStatus("idle"), 6000);
-      }
+      const text = [
+        "Olá! Vim pelo site da JD Resistências e quero solicitar atendimento.",
+        "",
+        `Nome: ${data.name}`,
+        `Email: ${data.email}`,
+        `Telefone/WhatsApp: ${data.phone}`,
+        `Empresa: ${data.company || "Não informado"}`,
+        "",
+        `Mensagem: ${data.message}`,
+      ].join("\n");
+
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+      setStatus("success");
+      setTimeout(() => { reset(); setStatus("idle"); }, 4000);
     } catch {
       setStatus("error");
       setTimeout(() => setStatus("idle"), 6000);
@@ -60,7 +63,7 @@ export default function ContactForm() {
               Deixe seus dados
             </h2>
             <p className="text-[#B0B8C0]/50 text-sm">
-              Retornamos em até 2 horas úteis. Ou, se preferir, chame direto no WhatsApp.
+              Envie sua necessidade e fale direto com a JD pelo WhatsApp.
             </p>
           </div>
         </ScrollReveal>
@@ -137,13 +140,13 @@ export default function ContactForm() {
           {status === "success" && (
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
               className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-green-600 text-white font-semibold px-6 py-3 rounded-xl shadow-xl z-50">
-              ✅ Mensagem enviada! Retornaremos em breve.
+              ✅ WhatsApp aberto com seus dados. É só enviar a mensagem.
             </motion.div>
           )}
           {status === "error" && (
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
               className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-red-600 text-white font-semibold px-6 py-3 rounded-xl shadow-xl z-50">
-              ❌ Erro ao enviar. Tente via WhatsApp.
+              ❌ Não conseguimos abrir o WhatsApp. Use o botão flutuante.
             </motion.div>
           )}
         </AnimatePresence>
