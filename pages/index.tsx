@@ -7,6 +7,7 @@ import Services from "@/components/sections/Services";
 import Applications from "@/components/sections/Applications";
 import Differentials from "@/components/sections/Differentials";
 import Gallery from "@/components/sections/Gallery";
+import Videos from "@/components/sections/Videos";
 import AboutUs from "@/components/sections/AboutUs";
 import Process from "@/components/sections/Process";
 import MainCTA from "@/components/sections/MainCTA";
@@ -128,6 +129,7 @@ export default function Home() {
         <Applications />
         <Differentials />
         <Gallery />
+        <Videos />
         <AboutUs />
         <Process />
         <MainCTA />
