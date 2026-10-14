@@ -64,7 +64,7 @@ export default function Home() {
                   "description": "Fabricação de resistências elétricas e fornos industriais desde 1975. Reforma e manutenção de equipamentos industriais.",
                   "url": "https://www.jdresistencias.com.br",
                   "telephone": "+5511995509477",
-                  "email": "contato@jdresistencias.com.br",
+                  "email": "jd.ltda@uol.com.br",
                   "foundingDate": "1975",
                   "address": {
                     "@type": "PostalAddress",

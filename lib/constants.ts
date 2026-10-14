@@ -10,7 +10,7 @@ export const WA_LINKS = {
 export const COMPANY = {
   name: "JD Resistências",
   phone: "(11) 99550-9477",
-  email: "contato@jdresistencias.com.br",
+  email: "jd.ltda@uol.com.br",
   address: "Carapicuíba, SP — Brasil",
   founded: 1975,
   years: 49,
