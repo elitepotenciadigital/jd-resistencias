@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { WA_LINKS } from "@/lib/constants";
 
 const navLinks = [
+  { href: "#produtos", label: "Produtos" },
   { href: "#servicos", label: "Serviços" },
   { href: "#quem-somos", label: "Quem Somos" },
   { href: "#sobre", label: "Diferenciais" },

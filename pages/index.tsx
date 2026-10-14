@@ -2,6 +2,7 @@ import Head from "next/head";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
+import ProductRange from "@/components/sections/ProductRange";
 import Applications from "@/components/sections/Applications";
 import Differentials from "@/components/sections/Differentials";
 import Videos from "@/components/sections/Videos";
@@ -112,6 +113,7 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
+        <ProductRange />
         <Videos />
         <Applications />
         <Differentials />
