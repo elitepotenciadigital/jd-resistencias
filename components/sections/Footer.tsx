@@ -16,8 +16,7 @@ export default function Footer() {
               <span className="text-white font-bold text-sm">RESISTÊNCIAS</span>
             </div>
             <p className="text-[#B0B8C0]/40 text-xs leading-relaxed mb-4">
-              49 anos de excelência em fornos e resistências industriais. Confiança que
-              você pode medir em graus.
+              Desde 1975, fabricação de resistências elétricas e fornos industriais. Reforma e manutenção com atendimento direto.
             </p>
             <a href={WA_LINKS.header} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs font-semibold hover:text-white transition-colors"
@@ -33,7 +32,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold text-sm mb-4">Links Rápidos</h4>
             <ul className="space-y-2">
-              {[["#home","Início"],["#servicos","Serviços"],["#sobre","Sobre Nós"],["#aplicacoes","Aplicações"],["#contato","Contato"]].map(([href,label])=>(
+              {[["#home","Início"],["#servicos","Serviços"],["#quem-somos","Sobre Nós"],["#videos","Vídeos"],["#contato","Contato"]].map(([href,label])=>(
                 <li key={href}><a href={href} className="text-[#B0B8C0]/40 hover:text-white text-xs transition-colors">{label}</a></li>
               ))}
             </ul>
@@ -53,8 +52,8 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold text-sm mb-4">Legal</h4>
             <ul className="space-y-2">
-              {["Política de Privacidade","Termos de Uso","LGPD"].map((label)=>(
-                <li key={label}><a href="#" className="text-[#B0B8C0]/40 hover:text-white text-xs transition-colors">{label}</a></li>
+              {[["/privacidade", "Política de Privacidade"],["/termos", "Termos de Uso"]].map(([href,label])=>(
+                <li key={label}><a href={href} className="text-[#B0B8C0]/70 hover:text-white text-xs transition-colors">{label}</a></li>
               ))}
             </ul>
           </div>

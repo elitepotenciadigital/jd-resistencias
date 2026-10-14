@@ -12,13 +12,21 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  scroll-padding-top: 80px;
 }
 
 body {
+  overflow-x: clip;
   background: #0D0D0D;
   color: #E0E0E0;
   font-family: 'Inter', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
 * {

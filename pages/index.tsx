@@ -1,12 +1,9 @@
 import Head from "next/head";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
-import Logos from "@/components/sections/Logos";
-import Metrics from "@/components/sections/Metrics";
 import Services from "@/components/sections/Services";
 import Applications from "@/components/sections/Applications";
 import Differentials from "@/components/sections/Differentials";
-import Gallery from "@/components/sections/Gallery";
 import Videos from "@/components/sections/Videos";
 import AboutUs from "@/components/sections/AboutUs";
 import Process from "@/components/sections/Process";
@@ -22,7 +19,7 @@ export default function Home() {
         <title>Resistências Industriais e Fornos Industriais | JD Resistências — Desde 1975</title>
         <meta
           name="description"
-          content="Compre resistências elétricas industriais e fornos industriais com 49 anos de experiência. Resistência tubular, de imersão, forno tratamento térmico, forno fundição alumínio. Fabricação própria, entrega em todo o Brasil. Carapicuíba, SP."
+          content="Resistências elétricas e fornos industriais sob medida desde 1975. Fabricação, manutenção e reforma. Solicite orçamento com a JD Resistências, Carapicuíba, SP."
         />
         <meta
           name="keywords"
@@ -39,7 +36,7 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.jdresistencias.com.br" />
         <meta property="og:title" content="Resistências Industriais e Fornos Industriais | JD Resistências" />
-        <meta property="og:description" content="Compre resistências elétricas industriais e fornos com 49 anos de experiência. Fabricação própria. Entrega em todo o Brasil." />
+        <meta property="og:description" content="Resistências elétricas e fornos industriais desde 1975. Fabricação, reforma e manutenção. Solicite orçamento." />
         <meta property="og:image" content="https://www.jdresistencias.com.br/og-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -50,7 +47,7 @@ export default function Home() {
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Resistências Industriais e Fornos | JD Resistências" />
-        <meta name="twitter:description" content="49 anos fabricando resistências elétricas e fornos industriais. Fabricação própria, entrega nacional." />
+        <meta name="twitter:description" content="Desde 1975, resistências elétricas e fornos industriais. Fabricação, reforma e manutenção." />
         <meta name="twitter:image" content="https://www.jdresistencias.com.br/og-image.png" />
 
         {/* Schema.org JSON-LD */}
@@ -64,7 +61,7 @@ export default function Home() {
                   "@type": "LocalBusiness",
                   "@id": "https://www.jdresistencias.com.br",
                   "name": "JD Resistências Industriais",
-                  "description": "Fabricante de resistências elétricas industriais e fornos industriais com 49 anos de experiência. Resistências tubulares, de imersão, Kanthal, Inconel. Fornos para tratamento térmico, fundição de alumínio e processos industriais.",
+                  "description": "Fabricação de resistências elétricas e fornos industriais desde 1975. Reforma e manutenção de equipamentos industriais.",
                   "url": "https://www.jdresistencias.com.br",
                   "telephone": "+5511995509477",
                   "email": "contato@jdresistencias.com.br",
@@ -73,10 +70,6 @@ export default function Home() {
                     "@type": "PostalAddress",
                     "addressLocality": "Carapicuíba",
                     "addressRegion": "SP",
-                    "addressCountry": "BR"
-                  },
-                  "geo": {
-                    "@type": "GeoCoordinates",
                     "addressCountry": "BR"
                   },
                   "areaServed": {
@@ -96,11 +89,6 @@ export default function Home() {
                       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Manutenção e Reforma de Fornos", "description": "Manutenção preventiva e corretiva de fornos industriais de qualquer marca. Troca de resistências." } },
                       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Projetos Customizados", "description": "Fabricação de resistências e fornos sob especificação técnica para qualquer aplicação industrial." } }
                     ]
-                  },
-                  "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "5",
-                    "reviewCount": "49"
                   }
                 },
                 {
@@ -123,13 +111,10 @@ export default function Home() {
 
       <main>
         <Hero />
-        <Logos />
-        <Metrics />
         <Services />
+        <Videos />
         <Applications />
         <Differentials />
-        <Gallery />
-        <Videos />
         <AboutUs />
         <Process />
         <MainCTA />

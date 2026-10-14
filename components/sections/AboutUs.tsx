@@ -64,14 +64,14 @@ export default function AboutUs() {
             <div className="space-y-5 text-[#B0B8C0]/70 text-sm sm:text-base leading-relaxed">
               <p>
                 Somos uma empresa familiar com{" "}
-                <strong className="text-white">49 anos de experiência</strong> na fabricação
+                <strong className="text-white">atuação desde 1975</strong> na fabricação
                 de resistências elétricas e fornos industriais. Fundada por José Dias Pereira,
                 a JD nasceu da paixão pela engenharia aplicada e pelo compromisso com quem
                 trabalha com indústria pesada.
               </p>
               <p>
-                Ao longo dessas quase cinco décadas, atendemos metalúrgicas, fundições,
-                indústrias automotivas, petroquímicas e centenas de outros segmentos que
+                Ao longo de nossa história, atendemos metalúrgicas, fundições,
+                indústrias automotivas e outros segmentos que
                 dependem de equipamentos confiáveis e duráveis para manter sua produção rodando.
               </p>
               <p>
@@ -110,9 +110,9 @@ export default function AboutUs() {
               <div className="grid grid-cols-2 gap-6">
                 {[
                   { val: "1975", label: "Ano de fundação" },
-                  { val: "49+", label: "Anos no mercado" },
-                  { val: "500+", label: "Clientes atendidos" },
-                  { val: "1400°C", label: "Capacidade máxima" },
+                  { val: "Própria", label: "Fabricação" },
+                  { val: "Brasil", label: "Atendimento" },
+                  { val: "Sob medida", label: "Projetos" },
                 ].map((s) => (
                   <div key={s.label} className="text-center py-4 px-2 rounded-xl border border-white/5" style={{ background: "rgba(255,255,255,0.03)" }}>
                     <div className="text-2xl sm:text-3xl font-black mb-1" style={{ color: "#E07020" }}>

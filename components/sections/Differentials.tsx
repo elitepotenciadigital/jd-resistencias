@@ -3,9 +3,9 @@ import { WA_LINKS } from "@/lib/constants";
 
 const points = [
   "Fabricação própria — controle total de qualidade em cada peça",
-  "49 anos de engenharia aplicada em projetos térmicos industriais",
+  "Engenharia aplicada em projetos térmicos industriais desde 1975",
   "Atendimento nacional com suporte técnico especializado no pós-venda",
-  "Resistências sob especificação técnica para qualquer aplicação",
+  "Resistências sob especificação técnica para sua aplicação",
   "Projetos até 1400°C com controle de temperatura de alta precisão",
   "Reforma, manutenção e fabricação com acompanhamento técnico direto",
 ];
@@ -26,9 +26,9 @@ export default function Differentials() {
                 }}
               >
                 <div className="text-center p-8">
-                  <div className="font-black leading-none" style={{ fontSize: "7rem", color: "#E07020" }}>49</div>
-                  <div className="text-white text-xl font-bold mt-2">Anos</div>
-                  <div className="text-[#B0B8C0]/40 text-sm mt-1">de Experiência</div>
+                  <div className="text-sm text-[#B0B8C0]">Desde</div>
+                  <div className="text-5xl font-black leading-none mt-3" style={{ color: "#E07020" }}>1975</div>
+                  <div className="text-white text-xl font-bold mt-2">Experiência industrial</div>
                   <div className="w-16 h-0.5 mx-auto my-6" style={{ background: "#E07020" }} />
                   <div className="text-[#B0B8C0]/60 text-sm leading-relaxed">
                     Fundada em 1975, a JD Resistências fabrica e reforma fornos e
@@ -38,7 +38,7 @@ export default function Differentials() {
               </div>
               {/* Floating badge */}
               <div
-                className="absolute -bottom-4 -right-4 text-white font-black text-sm px-4 py-3 rounded-xl"
+                className="absolute bottom-0 right-0 text-white font-black text-sm px-4 py-3 rounded-lg"
                 style={{ background: "linear-gradient(135deg, #E07020, #F08030)" }}
               >
                 Fabricação Própria

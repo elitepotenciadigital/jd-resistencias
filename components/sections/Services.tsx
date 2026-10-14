@@ -1,6 +1,9 @@
 import { SERVICES } from "@/lib/constants";
 import ScrollReveal from "@/components/common/ScrollReveal";
-import { WA_LINKS } from "@/lib/constants";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
+import { Flame, Zap, Wrench, Ruler, Lightbulb, LifeBuoy } from "lucide-react";
+
+const icons = [Flame, Zap, Wrench, Ruler, Lightbulb, LifeBuoy];
 
 export default function Services() {
   return (
@@ -18,20 +21,22 @@ export default function Services() {
               Resistências Elétricas e Fornos Industriais
             </h2>
             <p className="text-[#B0B8C0]/60 max-w-xl mx-auto text-sm">
-              Fabricamos resistências elétricas industriais e fornos industriais sob medida com 49 anos de expertise. Resistências tubulares, de imersão, Kanthal, Inconel e fornos para tratamento térmico.
+              Fabricação sob medida desde 1975. Resistências elétricas, fornos para processos industriais e reforma de equipamentos.
             </p>
           </div>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {SERVICES.map((s, i) => (
+          {SERVICES.map((s, i) => {
+            const Icon = icons[i];
+            return (
             <ScrollReveal key={s.title} delay={i * 0.08}>
               <div
-                className="rounded-xl p-6 sm:p-8 border border-white/5 hover:border-[#E07020]/30 hover:-translate-y-1 transition-all duration-300 group"
+                className="rounded-lg h-full p-6 sm:p-8 border border-white/15 hover:border-[#E07020]/40 transition-all duration-300 group"
                 style={{ background: "#1C1C1C" }}
               >
                 <div className="flex items-start justify-between mb-4">
-                  <span className="text-3xl">{s.icon}</span>
+                  <Icon size={28} className="text-[#C6CDD3] shrink-0" aria-hidden="true" />
                   {"tag" in s && (
                     <span
                       className="text-xs font-bold px-2 py-1 rounded-md"
@@ -44,19 +49,19 @@ export default function Services() {
                 <h3 className="text-base font-bold text-white mb-2 group-hover:text-[#E07020] transition-colors">
                   {s.title}
                 </h3>
-                <p className="text-[#B0B8C0]/50 text-sm leading-relaxed mb-4">{s.description}</p>
+                <p className="text-[#C6CDD3] text-sm leading-relaxed mb-4">{s.description}</p>
                 <a
-                  href={WA_LINKS.hero}
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Vim pelo site e gostaria de um orçamento: ${s.title}.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs font-semibold hover:text-white transition-colors"
                   style={{ color: "#E07020" }}
                 >
-                  Solicitar →
+                  Solicitar orçamento →
                 </a>
               </div>
             </ScrollReveal>
-          ))}
+          );})}
         </div>
       </div>
     </section>

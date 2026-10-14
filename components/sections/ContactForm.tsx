@@ -16,7 +16,8 @@ type FormData = {
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "saved" | "whatsappOnly" | "error">("idle");
 
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
+  const [whatsappUrl, setWhatsappUrl] = useState("");
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
 
   async function onSubmit(data: FormData) {
     setStatus("loading");
@@ -31,6 +32,8 @@ export default function ContactForm() {
         "",
         `Mensagem: ${data.message}`,
       ].join("\n");
+      const destination = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+      setWhatsappUrl(destination);
 
       let stored = false;
       try {
@@ -38,6 +41,7 @@ export default function ContactForm() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
+          signal: AbortSignal.timeout(8000),
         });
         const result = await response.json().catch(() => null);
         stored = response.ok && result?.stored === true;
@@ -45,9 +49,8 @@ export default function ContactForm() {
         stored = false;
       }
 
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
       setStatus(stored ? "saved" : "whatsappOnly");
-      setTimeout(() => { reset(); setStatus("idle"); }, 4000);
+      window.location.assign(destination);
     } catch {
       setStatus("error");
       setTimeout(() => setStatus("idle"), 6000);
@@ -89,30 +92,31 @@ export default function ContactForm() {
           >
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-xs font-semibold text-[#B0B8C0]/60 mb-1.5">Nome completo *</label>
-                <input {...register("name", { required: "Nome obrigatório" })} placeholder="João Silva" className={inputClass(!!errors.name)} />
+                <label htmlFor="contact-name" className="block text-xs font-semibold text-[#B0B8C0] mb-1.5">Nome completo *</label>
+                <input id="contact-name" autoComplete="name" {...register("name", { required: "Nome obrigatório", validate: value => !!value.trim() || "Informe seu nome" })} placeholder="João Silva" className={inputClass(!!errors.name)} />
                 {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
               </div>
               <div>
-                <label className="block text-xs font-semibold text-[#B0B8C0]/60 mb-1.5">Email *</label>
-                <input {...register("email", { required: "Email obrigatório", pattern: { value: /^\S+@\S+\.\S+$/, message: "Email inválido" } })} type="email" placeholder="joao@empresa.com.br" className={inputClass(!!errors.email)} />
+                <label htmlFor="contact-email" className="block text-xs font-semibold text-[#B0B8C0] mb-1.5">Email *</label>
+                <input id="contact-email" autoComplete="email" {...register("email", { required: "Email obrigatório", pattern: { value: /^\S+@\S+\.\S+$/, message: "Email inválido" } })} type="email" placeholder="joao@empresa.com.br" className={inputClass(!!errors.email)} />
                 {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
               </div>
               <div>
-                <label className="block text-xs font-semibold text-[#B0B8C0]/60 mb-1.5">Telefone / WhatsApp *</label>
-                <input {...register("phone", { required: "Telefone obrigatório" })} type="tel" placeholder="(11) 99999-9999" className={inputClass(!!errors.phone)} />
+                <label htmlFor="contact-phone" className="block text-xs font-semibold text-[#B0B8C0] mb-1.5">Telefone / WhatsApp *</label>
+                <input id="contact-phone" autoComplete="tel" {...register("phone", { required: "Telefone obrigatório", validate: value => /^\d{10,13}$/.test(value.replace(/\D/g, "")) || "Informe um telefone com DDD" })} type="tel" placeholder="(11) 99999-9999" className={inputClass(!!errors.phone)} />
                 {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
               </div>
               <div>
-                <label className="block text-xs font-semibold text-[#B0B8C0]/60 mb-1.5">Empresa</label>
-                <input {...register("company")} placeholder="Nome da empresa" className={inputClass(false)} />
+                <label htmlFor="contact-company" className="block text-xs font-semibold text-[#B0B8C0] mb-1.5">Empresa</label>
+                <input id="contact-company" autoComplete="organization" {...register("company")} placeholder="Nome da empresa" className={inputClass(false)} />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#B0B8C0]/60 mb-1.5">Mensagem *</label>
+              <label htmlFor="contact-message" className="block text-xs font-semibold text-[#B0B8C0] mb-1.5">Mensagem *</label>
               <textarea
-                {...register("message", { required: "Mensagem obrigatória" })}
+                id="contact-message"
+                {...register("message", { required: "Mensagem obrigatória", validate: value => !!value.trim() || "Descreva sua necessidade" })}
                 placeholder="Descreva sua necessidade: tipo de forno, temperatura, volume de produção..."
                 rows={4}
                 className={`${inputClass(!!errors.message)} resize-none`}
@@ -124,7 +128,7 @@ export default function ContactForm() {
               <input {...register("privacy", { required: true })} type="checkbox" id="privacy" className="mt-0.5" style={{ accentColor: "#E07020" }} />
               <label htmlFor="privacy" className="text-xs text-[#B0B8C0]/40 cursor-pointer">
                 Concordo com a{" "}
-                <a href="#" className="text-[#B0B8C0] underline hover:text-white">política de privacidade</a>{" "}
+                <a href="/privacidade" target="_blank" rel="noopener noreferrer" className="text-[#B0B8C0] underline hover:text-white">política de privacidade</a>{" "}
                 e autorizo o contato da JD Resistências.
               </label>
             </div>
@@ -144,8 +148,10 @@ export default function ContactForm() {
                   </svg>
                   Enviando...
                 </span>
-              ) : "Enviar Mensagem"}
+              ) : "Continuar no WhatsApp"}
             </button>
+            <p className="text-sm text-[#B0B8C0]">A mensagem será preenchida com seus dados. Toque em enviar no WhatsApp para falar com a JD.</p>
+            {whatsappUrl && <a href={whatsappUrl} className="block text-center text-white underline py-3">Abrir WhatsApp com minha mensagem</a>}
           </form>
         </ScrollReveal>
 

@@ -38,7 +38,7 @@ export default function Header() {
             className="h-11 w-11 object-contain"
             style={{ filter: "drop-shadow(0 0 8px rgba(224,112,32,0.5))" }}
           />
-          <div className="hidden sm:block">
+          <div>
             <span className="text-white font-bold text-sm block leading-none">RESISTÊNCIAS</span>
             <span className="text-[#B0B8C0] text-[10px] leading-none">Desde 1975</span>
           </div>
@@ -79,6 +79,7 @@ export default function Header() {
             className="md:hidden text-[#B0B8C0] p-2"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menu"
+            aria-expanded={menuOpen}
           >
             <div className="w-6 h-0.5 bg-current mb-1.5" />
             <div className="w-6 h-0.5 bg-current mb-1.5" />
