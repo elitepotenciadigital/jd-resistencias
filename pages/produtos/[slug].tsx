@@ -15,7 +15,7 @@ export default function ProductPage({ product }: InferGetStaticPropsType<typeof 
   const whatsapp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Gostaria de um orçamento da JD: ${product.title}.`)}`;
   return <>
     <Head>
-      <title>{product.title} | Fabricação e Orçamento | JD Resistências</title>
+      <title>{`${product.title} | Fabricação e Orçamento | JD Resistências`}</title>
       <meta name="description" content={`${product.summary} ${product.request}`} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="canonical" href={url} />
