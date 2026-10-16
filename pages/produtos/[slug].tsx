@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { PRODUCTS } from "@/lib/products";
 import { WHATSAPP_NUMBER, COMPANY } from "@/lib/constants";
@@ -33,6 +34,12 @@ export default function ProductPage({ product }: InferGetStaticPropsType<typeof 
       <h1 className="text-[32px] sm:text-5xl font-black leading-tight mb-6">{product.title}</h1>
       <p className="text-lg text-[#D5D9DD] max-w-3xl leading-relaxed mb-8">{product.summary}</p>
       <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex bg-[#A52B24] hover:bg-[#BF352D] text-white font-bold px-6 py-4 rounded-lg transition-colors">Solicitar orçamento no WhatsApp</a>
+      {product.image && <figure className="mt-10">
+        <div className="relative w-full h-[480px] max-h-[70vh] bg-[#202327] rounded-lg overflow-hidden border border-white/15">
+          <Image src={product.image} alt={product.imageAlt || product.title} fill sizes="(max-width: 1024px) 100vw, 984px" className="object-contain" priority />
+        </div>
+        <figcaption className="mt-3 text-sm text-[#C6CDD3]">{product.title} · JD Resistências</figcaption>
+      </figure>}
       <div className="grid md:grid-cols-2 gap-10 mt-14 border-t border-white/15 pt-10">
         <section><h2 className="text-2xl font-bold mb-4">Aplicação e especificação</h2><p className="text-[#C6CDD3] leading-relaxed">{product.detail}</p></section>
         <section><h2 className="text-2xl font-bold mb-4">Informações para o orçamento</h2><p className="text-[#C6CDD3] leading-relaxed">{product.request}</p><p className="text-[#C6CDD3] mt-4 leading-relaxed">Materiais, preço e condições de fornecimento são definidos na proposta, após a avaliação da sua necessidade.</p></section>
