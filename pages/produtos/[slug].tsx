@@ -34,6 +34,13 @@ export default function ProductPage({ product }: InferGetStaticPropsType<typeof 
       <h1 className="text-[32px] sm:text-5xl font-black leading-tight mb-6">{product.title}</h1>
       <p className="text-lg text-[#D5D9DD] max-w-3xl leading-relaxed mb-8">{product.summary}</p>
       <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex bg-[#A52B24] hover:bg-[#BF352D] text-white font-bold px-6 py-4 rounded-lg transition-colors">Solicitar orçamento no WhatsApp</a>
+      {!!product.specifications?.length && <section className="mt-10 border-y border-white/15 py-8" aria-labelledby="product-specifications-title">
+        <h2 id="product-specifications-title" className="text-2xl font-bold mb-6">Modelos e capacidades</h2>
+        <dl className="grid sm:grid-cols-2 gap-x-10 gap-y-6">
+          {product.specifications.map(spec => <div key={spec.label}><dt className="text-sm text-[#C6CDD3] mb-1">{spec.label}</dt><dd className="font-semibold leading-relaxed">{spec.value}</dd></div>)}
+        </dl>
+        {product.specificationNote && <p className="text-sm text-[#C6CDD3] leading-relaxed mt-6 max-w-3xl">{product.specificationNote}</p>}
+      </section>}
       {product.image && <figure className="mt-10">
         <div className="relative w-full h-[480px] max-h-[70vh] bg-[#202327] rounded-lg overflow-hidden border border-white/15">
           <Image src={product.image} alt={product.imageAlt || product.title} fill sizes="(max-width: 1024px) 100vw, 984px" className="object-contain" priority />

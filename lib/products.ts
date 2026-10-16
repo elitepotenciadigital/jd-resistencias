@@ -8,10 +8,19 @@ export type Product = {
   image?: string;
   imageAlt?: string;
   gallery?: { src: string; alt: string; caption: string }[];
+  specifications?: { label: string; value: string }[];
+  specificationNote?: string;
 };
 
 export const PRODUCTS: Product[] = [
-  { slug: "forno-eletrico-para-fundicao", title: "Forno elétrico para fundição até 1.200 °C", summary: "Forno elétrico para fundição, com temperatura de até 1.200 °C e avaliação conforme a aplicação.", detail: "Consulte a JD para um projeto de forno elétrico para fundição. Os fornos apresentados têm temperatura de até 1.200 °C. A capacidade, a potência e as condições de operação são definidas conforme o material e os requisitos do processo, na proposta técnica.", request: "Informe o material a fundir, capacidade necessária, temperatura de trabalho, tensão disponível e local de instalação.", keywords: ["forno elétrico para fundição", "forno de fundição até 1200 graus"], image: "/forno-fundicao-1200c.webp", imageAlt: "Forno elétrico para fundição da JD, com corpo cilíndrico e tampa superior aberta", gallery: [
+  { slug: "forno-eletrico-para-fundicao", title: "Forno elétrico para fundição até 1.200 °C", summary: "Fornos para fundição de alumínio em 220 V ou 380 V, conforme o modelo. Opções novas e usadas, além de reforma de equipamentos.", detail: "A JD fornece fornos elétricos para fundição de alumínio com temperatura de até 1.200 °C e capacidades de 111, 175, 250 ou 500 kg por hora, conforme o modelo e a necessidade do cliente. Consulte também outras capacidades sob projeto, fornos novos e usados à pronta entrega e reforma do seu equipamento. A disponibilidade de estoque deve ser confirmada no atendimento.", request: "Informe o material a fundir, a capacidade desejada em kg por hora, a temperatura de trabalho, a tensão disponível (220 V ou 380 V) e o local de instalação. Diga se procura um forno novo, usado ou a reforma do equipamento atual.", keywords: ["forno elétrico para fundição", "forno de fundição até 1200 graus", "forno para fundição de alumínio", "forno de fundição novo e usado"], specifications: [
+    { label: "Temperatura", value: "Até 1.200 °C, conforme o modelo" },
+    { label: "Alimentação elétrica", value: "220 V ou 380 V, conforme especificação" },
+    { label: "Fundição de alumínio", value: "111, 175, 250 ou 500 kg/h, conforme o modelo" },
+    { label: "Fornecimento", value: "Fornos novos e usados; reforma de equipamentos" },
+    { label: "Pronta entrega", value: "Consulte modelos e estoque disponíveis" },
+    { label: "Atendimento", value: "Todo o Brasil" },
+  ], specificationNote: "A capacidade por hora depende do modelo, da carga e das condições de operação. A alimentação elétrica, o desempenho previsto, a disponibilidade e as condições de fornecimento são confirmados na proposta técnica e comercial.", image: "/forno-fundicao-1200c.webp", imageAlt: "Forno elétrico para fundição da JD, com corpo cilíndrico e tampa superior aberta", gallery: [
     { src: "/forno-fundicao-interior-cilindrico.webp", alt: "Interior de forno cilíndrico para fundição, com resistências em espiral nas paredes", caption: "Câmara cilíndrica e elementos de aquecimento" },
     { src: "/forno-fundicao-camara-resistencias.webp", alt: "Forno para fundição aberto, com resistências e revestimento isolante na câmara e na porta", caption: "Câmara e porta com resistências elétricas" },
   ] },
