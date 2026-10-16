@@ -40,6 +40,17 @@ export default function ProductPage({ product }: InferGetStaticPropsType<typeof 
         </div>
         <figcaption className="mt-3 text-sm text-[#C6CDD3]">{product.title} · JD Resistências</figcaption>
       </figure>}
+      {!!product.gallery?.length && <section className="mt-12" aria-labelledby="product-gallery-title">
+        <h2 id="product-gallery-title" className="text-2xl font-bold mb-6">Detalhes dos fornos para fundição</h2>
+        <div className="grid sm:grid-cols-2 gap-6">
+          {product.gallery.map(photo => <figure key={photo.src}>
+            <a href={photo.src} target="_blank" rel="noopener noreferrer" aria-label={`Ampliar foto: ${photo.caption}`} className="block relative aspect-[3/4] bg-[#202327] rounded-lg overflow-hidden border border-white/15 hover:border-[#A52B24] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white transition-colors">
+              <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 639px) 100vw, 480px" className="object-contain" />
+            </a>
+            <figcaption className="mt-3 text-sm text-[#C6CDD3]">{photo.caption}</figcaption>
+          </figure>)}
+        </div>
+      </section>}
       <div className="grid md:grid-cols-2 gap-10 mt-14 border-t border-white/15 pt-10">
         <section><h2 className="text-2xl font-bold mb-4">Aplicação e especificação</h2><p className="text-[#C6CDD3] leading-relaxed">{product.detail}</p></section>
         <section><h2 className="text-2xl font-bold mb-4">Informações para o orçamento</h2><p className="text-[#C6CDD3] leading-relaxed">{product.request}</p><p className="text-[#C6CDD3] mt-4 leading-relaxed">Materiais, preço e condições de fornecimento são definidos na proposta, após a avaliação da sua necessidade.</p></section>
