@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { GA4_MEASUREMENT_ID, GOOGLE_ADS_ID } from "@/lib/googleAds";
 
 export default function Document() {
   return (
@@ -6,14 +7,15 @@ export default function Document() {
       <Head>
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17995709868"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`}
         />
         <script
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'AW-17995709868');`,
+gtag('config', '${GA4_MEASUREMENT_ID}');
+gtag('config', '${GOOGLE_ADS_ID}');`,
           }}
         />
       </Head>

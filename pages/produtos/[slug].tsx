@@ -2,8 +2,10 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import { useEffect } from "react";
 import { PRODUCTS } from "@/lib/products";
 import { WHATSAPP_NUMBER, COMPANY } from "@/lib/constants";
+import { trackProductView } from "@/lib/googleAds";
 
 export const getStaticPaths: GetStaticPaths = async () => ({ paths: PRODUCTS.map(p => ({ params: { slug: p.slug } })), fallback: false });
 export const getStaticProps: GetStaticProps<{ product: typeof PRODUCTS[number] }> = async ({ params }) => {
@@ -14,6 +16,11 @@ export const getStaticProps: GetStaticProps<{ product: typeof PRODUCTS[number] }
 export default function ProductPage({ product }: InferGetStaticPropsType<typeof getStaticProps>) {
   const url = `https://www.jdresistencias.com.br/produtos/${product.slug}`;
   const whatsapp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Gostaria de um orçamento da JD: ${product.title}.`)}`;
+
+  useEffect(() => {
+    trackProductView(product.slug, product.title);
+  }, [product.slug, product.title]);
+
   return <>
     <Head>
       <title>{`${product.title} | Fabricação e Orçamento | JD Resistências`}</title>

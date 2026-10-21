@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
-import { trackWhatsAppConversion } from "@/lib/googleAds";
+import { trackContactFormSubmit, trackWhatsAppConversion } from "@/lib/googleAds";
 
 type FormData = {
   name: string;
@@ -51,7 +51,8 @@ export default function ContactForm() {
       }
 
       setStatus(stored ? "saved" : "whatsappOnly");
-      trackWhatsAppConversion();
+      trackContactFormSubmit();
+      trackWhatsAppConversion("contact_form");
       window.location.assign(destination);
     } catch {
       setStatus("error");
