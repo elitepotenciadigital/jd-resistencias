@@ -59,8 +59,8 @@ export default function Home() {
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": "LocalBusiness",
-                  "@id": "https://www.jdresistencias.com.br",
+                  "@type": ["Organization", "LocalBusiness"],
+                  "@id": "https://www.jdresistencias.com.br/#business",
                   "name": "JD Resistências Industriais",
                   "description": "Fabricação de resistências elétricas e fornos industriais desde 1975. Reforma e manutenção de equipamentos industriais.",
                   "url": "https://www.jdresistencias.com.br",
@@ -81,6 +81,21 @@ export default function Home() {
                   "image": "https://www.jdresistencias.com.br/logo.png",
                   "logo": "https://www.jdresistencias.com.br/logo.png",
                   "sameAs": [],
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+5511995509477",
+                    "contactType": "sales",
+                    "areaServed": "BR",
+                    "availableLanguage": "Portuguese"
+                  },
+                  "knowsAbout": [
+                    "Resistências elétricas industriais",
+                    "Fornos industriais",
+                    "Tratamento térmico",
+                    "Têmpera e revenimento",
+                    "Fundição de alumínio",
+                    "Reforma de fornos elétricos"
+                  ],
                   "hasOfferCatalog": {
                     "@type": "OfferCatalog",
                     "name": "Resistências e Fornos Industriais",

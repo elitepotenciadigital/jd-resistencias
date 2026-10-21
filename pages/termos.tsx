@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Terms() {
   return <main className="max-w-3xl mx-auto px-5 py-12 text-[#D5D9DD] leading-relaxed space-y-6">
-    <Head><title>Informações Comerciais | JD Resistências</title><meta name="viewport" content="width=device-width, initial-scale=1" /></Head>
+    <Head><title>Informações Comerciais | JD Resistências</title><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="robots" content="noindex, follow" /></Head>
     <Link href="/" className="text-white underline">Voltar ao site</Link>
     <h1 className="text-3xl font-bold text-white">Informações Comerciais e Uso do Site</h1>
     <p>O site apresenta produtos e serviços da JD Resistências. As informações gerais não substituem a avaliação técnica e o orçamento específico de cada projeto.</p>

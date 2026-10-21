@@ -1,7 +1,9 @@
 import { COMPANY, WA_LINKS } from "@/lib/constants";
+import Image from "next/image";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const openConsentSettings = () => window.dispatchEvent(new Event("jd-open-consent-settings"));
   return (
     <footer className="pt-16 pb-8 border-t border-white/5" style={{ background: "#0A0A0A" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -12,7 +14,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 sm:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <img src="/logo.png" alt="JD Resistências" className="h-12 w-12 object-contain" />
+              <Image src="/logo.png" alt="JD Resistências" width={48} height={48} className="h-12 w-12 object-contain" />
               <span className="text-white font-bold text-sm">RESISTÊNCIAS</span>
             </div>
             <p className="text-[#B0B8C0]/40 text-xs leading-relaxed mb-4">
@@ -55,6 +57,7 @@ export default function Footer() {
               {[["/privacidade", "Política de Privacidade"],["/termos", "Termos de Uso"]].map(([href,label])=>(
                 <li key={label}><a href={href} className="text-[#B0B8C0]/70 hover:text-white text-xs transition-colors">{label}</a></li>
               ))}
+              <li><button type="button" onClick={openConsentSettings} className="text-left text-[#B0B8C0]/70 hover:text-white text-xs transition-colors">Preferências de cookies</button></li>
             </ul>
           </div>
         </div>

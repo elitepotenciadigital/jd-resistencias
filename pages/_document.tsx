@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import { GA4_MEASUREMENT_ID, GOOGLE_ADS_ID } from "@/lib/googleAds";
+import { CONSENT_STORAGE_KEY } from "@/lib/consent";
 
 export default function Document() {
   return (
@@ -11,11 +12,29 @@ export default function Document() {
         />
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${GA4_MEASUREMENT_ID}');
-gtag('config', '${GOOGLE_ADS_ID}');`,
+            __html: `(function () {
+  var consent = {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 500
+  };
+  try {
+    var saved = JSON.parse(localStorage.getItem('${CONSENT_STORAGE_KEY}') || 'null');
+    if (saved && saved.version === 1) {
+      consent.analytics_storage = saved.analytics ? 'granted' : 'denied';
+      consent.ad_storage = saved.advertising ? 'granted' : 'denied';
+      consent.ad_user_data = saved.advertising ? 'granted' : 'denied';
+    }
+  } catch (error) {}
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  window.gtag('consent', 'default', consent);
+  window.gtag('js', new Date());
+  window.gtag('config', '${GA4_MEASUREMENT_ID}');
+  window.gtag('config', '${GOOGLE_ADS_ID}');
+})();`,
           }}
         />
       </Head>

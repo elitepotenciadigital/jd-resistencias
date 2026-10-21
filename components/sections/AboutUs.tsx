@@ -125,7 +125,7 @@ export default function AboutUs() {
 
               <div className="mt-6 pt-6 border-t border-white/5">
                 <p className="text-[#B0B8C0]/50 text-xs leading-relaxed text-center italic">
-                  "Nossa missão é simples: seu equipamento funcionando, sua produção rodando."
+                  &ldquo;Nossa missão é simples: seu equipamento funcionando, sua produção rodando.&rdquo;
                 </p>
               </div>
             </div>

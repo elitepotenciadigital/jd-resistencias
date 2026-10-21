@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { WA_LINKS } from "@/lib/constants";
 
 const navLinks = [
@@ -33,9 +34,11 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <img
+          <Image
             src="/logo.png"
             alt="JD Resistências"
+            width={44}
+            height={44}
             className="h-11 w-11 object-contain"
             style={{ filter: "drop-shadow(0 0 8px rgba(224,112,32,0.5))" }}
           />
