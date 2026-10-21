@@ -12,6 +12,7 @@ type FormData = {
   company: string;
   message: string;
   privacy: boolean;
+  website: string;
 };
 
 export default function ContactForm() {
@@ -93,6 +94,10 @@ export default function ContactForm() {
             className="rounded-2xl p-6 sm:p-10 border border-white/5 space-y-5"
             style={{ background: "#1C1C1C" }}
           >
+            <div className="absolute left-[-9999px]" aria-hidden="true">
+              <label htmlFor="contact-website">Não preencha este campo</label>
+              <input id="contact-website" tabIndex={-1} autoComplete="off" {...register("website")} />
+            </div>
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
                 <label htmlFor="contact-name" className="block text-xs font-semibold text-[#B0B8C0] mb-1.5">Nome completo *</label>
@@ -153,7 +158,7 @@ export default function ContactForm() {
                 </span>
               ) : "Continuar no WhatsApp"}
             </button>
-            <p className="text-sm text-[#B0B8C0]">A mensagem será preenchida com seus dados. Toque em enviar no WhatsApp para falar com a JD.</p>
+            <p className="text-sm text-[#B0B8C0]">Seus dados ficam registrados para o atendimento comercial e a mensagem também é preparada no WhatsApp.</p>
             {whatsappUrl && <a href={whatsappUrl} className="block text-center text-white underline py-3">Abrir WhatsApp com minha mensagem</a>}
           </form>
         </ScrollReveal>

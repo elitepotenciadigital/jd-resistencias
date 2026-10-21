@@ -12,6 +12,8 @@ import MainCTA from "@/components/sections/MainCTA";
 import ContactForm from "@/components/sections/ContactForm";
 import Footer from "@/components/sections/Footer";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
+import IndustrialFAQ from "@/components/sections/IndustrialFAQ";
+import { INDUSTRIAL_FAQ } from "@/lib/industrialFaq";
 
 export default function Home() {
   return (
@@ -114,6 +116,18 @@ export default function Home() {
                   "name": "JD Resistências",
                   "description": "Resistências Elétricas Industriais e Fornos Industriais",
                   "inLanguage": "pt-BR"
+                },
+                {
+                  "@type": "FAQPage",
+                  "@id": "https://www.jdresistencias.com.br/#perguntas-frequentes",
+                  "mainEntity": INDUSTRIAL_FAQ.map(item => ({
+                    "@type": "Question",
+                    "name": item.question,
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": item.answer
+                    }
+                  }))
                 }
               ]
             })
@@ -135,6 +149,7 @@ export default function Home() {
         <AboutUs />
         <Process />
         <MainCTA />
+        <IndustrialFAQ />
         <ContactForm />
       </main>
 
