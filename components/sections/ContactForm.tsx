@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "@/components/common/ScrollReveal";
-import { WHATSAPP_NUMBER } from "@/lib/constants";
+import { WA_LINKS, WHATSAPP_NUMBER } from "@/lib/constants";
 import { trackContactFormSubmit, trackWhatsAppConversion } from "@/lib/googleAds";
 
 type FormData = {
@@ -85,6 +85,14 @@ export default function ContactForm() {
             <p className="text-[#B0B8C0]/50 text-sm">
               Preencha os dados e continue o atendimento pelo WhatsApp da JD.
             </p>
+            <a
+              href={WA_LINKS.mainCta}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center justify-center bg-[#25D366] text-white font-black px-6 py-4 rounded-xl hover:bg-[#1ebe5d] transition-colors"
+            >
+              Prefiro falar agora pelo WhatsApp
+            </a>
           </div>
         </ScrollReveal>
 

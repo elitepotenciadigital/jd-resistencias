@@ -12,14 +12,14 @@ export default function Hero() {
           Resistências elétricas e fornos industriais
         </h1>
         <p className="text-[#E0E2E4] text-base sm:text-lg leading-relaxed max-w-xl mb-6">
-          Fabricação sob medida, reforma e manutenção. Fale diretamente com nossa equipe para avaliar a solução para sua produção.
+          Fabricação sob medida, reforma e manutenção. Envie sua necessidade direto pelo WhatsApp e receba orientação da equipe técnica.
         </p>
         <p className="text-[#D5D9DD] text-sm mb-8">Fabricação própria · Carapicuíba, SP · Atendimento nacional</p>
         <div className="flex flex-col sm:flex-row gap-3 items-start">
-          <a href={WA_LINKS.hero} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto text-center bg-[#A52B24] hover:bg-[#BF352D] text-white font-bold px-6 py-4 rounded-lg transition-colors">Solicitar orçamento no WhatsApp</a>
+          <a href={WA_LINKS.hero} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto text-center bg-[#A52B24] hover:bg-[#BF352D] text-white font-bold px-6 py-4 rounded-lg transition-colors">Falar com a JD no WhatsApp</a>
           <a href="#videos" className="w-full sm:w-auto text-center border border-white/50 text-white font-semibold px-6 py-4 rounded-lg hover:bg-white/10 transition-colors">Conhecer a fábrica</a>
         </div>
-        <p className="mt-5 text-sm text-[#D5D9DD]">Resistências, novos fornos ou reforma do seu equipamento.</p>
+        <p className="mt-5 text-sm text-[#D5D9DD]">Resistências, fornos industriais ou reforma. Informe aplicação, potência e temperatura.</p>
       </div>
     </section>
   );
