@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { WA_LINKS } from "@/lib/constants";
 
 export default function WhatsAppButton() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const onScroll = () => {
